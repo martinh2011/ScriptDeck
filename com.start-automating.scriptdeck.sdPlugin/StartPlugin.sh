@@ -1,3 +1,3 @@
 #!/bin/sh
 
-pwsh -nologo -file "./StartPlugin.ps1" $*
+/usr/local/bin/pwsh -nologo -NonInteractive -file "$(dirname "$0")/StartPlugin.ps1" "$@"
