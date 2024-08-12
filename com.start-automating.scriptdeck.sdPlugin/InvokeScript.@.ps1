@@ -25,7 +25,8 @@ foreach ($settingName in 'KeyDown','KeyUp','WillAppear', 'WillDisappear') {
         if ($invokeError) {
             $invokeError | Out-string | Add-Content -Path $global:STREAMDECK_PLUGINLOGPATH
             Send-StreamDeck -ShowAlert -Context $event.MessageData.Context
-        } else {
+    }
+    elseif ($settings.ShowOKImage) {
             Send-StreamDeck -ShowOK -Context $event.MessageData.Context
         }
     }
